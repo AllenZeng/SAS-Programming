@@ -6,7 +6,7 @@ data _null_;
 	if eof then call execute('; run;');
 run;
 
-/*2: macro variable*/
+/*2: Macro Variable*/
 proc sql noprint;
 	select catx(' = ', cats(AVISITN), quote(cats(AVISIT))) into :fmtlst separated by ' '
 		from demo
@@ -18,7 +18,7 @@ proc format;
 	&fmtlst;
 run;
 
-/*3: CNTLIN= option*/
+/*3: CNTLIN*/
 proc sql;
 	create table fmt as
 		select distinct 'vs3t' as FMTNAME
