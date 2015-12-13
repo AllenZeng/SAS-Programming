@@ -1,2 +1,2 @@
 # SAS-Programming
-Code
+My own SAS macros / sample code
