@@ -4,7 +4,7 @@
 <li>getfdate.sas: Get last modified date of file in a directory</li>
 <li>getfname.sas: Get the latest filename in a directory</li>
 <li>getfpath.sas: Get full path of a file</li>
-<li>xpt2sas.sas Convert .xpt files to SAS Datasets</li>
-<li>sas2xpt.sas: Convert SAS Datasets to .xpt files</li>
+<li>xpt2sas.sas Convert .xpt files to SAS datasets</li>
+<li>sas2xpt.sas: Convert SAS datasets to .xpt files</li>
 <li>gettname.sas: Get all tables name in a directory</li>
 <li>splitdata.sas: Split dataset based on the value of a variable</li>
