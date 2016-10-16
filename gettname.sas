@@ -1,3 +1,8 @@
+/*-----------------------------------------------------------------------------
+ Author:          Xianhua Zeng
+ Creation Date:   25Jun2015
+ Program Purpose: To get all tables name in a directory
+-----------------------------------------------------------------------------*/
 /*DICTIONARY Tables and SASHELP Views*/
 proc sql noprint;
 	 select MEMNAME into :tnames separated by ', '

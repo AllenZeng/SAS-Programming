@@ -1,3 +1,8 @@
+/*-----------------------------------------------------------------------------
+ Author:          Xianhua Zeng
+ Creation Date:   25Jun2015
+ Program Purpose: To convert .xpt files to SAS datasets
+-----------------------------------------------------------------------------*/
 /*.sas7bdat files*/
 libname sdata "/sas/";
  

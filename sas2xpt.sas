@@ -1,3 +1,8 @@
+/*-----------------------------------------------------------------------------
+ Author:          Xianhua Zeng
+ Creation Date:   25Jun2015
+ Program Purpose: To convert SAS datasets to .xpt files
+-----------------------------------------------------------------------------*/
 /*.xpt files*/
 %let dir=/xpt/;
  

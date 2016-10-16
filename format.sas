@@ -1,3 +1,8 @@
+/*-----------------------------------------------------------------------------
+ Author:          Xianhua Zeng
+ Creation Date:   25Jun2015
+ Program Purpose: To create SAS format
+-----------------------------------------------------------------------------*/
 /*1: CALL EXECUTE*/
 data _null_;
 	set demo end=eof;

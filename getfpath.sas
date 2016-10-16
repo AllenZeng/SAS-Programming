@@ -1,3 +1,8 @@
+/*-----------------------------------------------------------------------------
+ Author:          Xianhua Zeng
+ Creation Date:   25Jun2015
+ Program Purpose: To get full path of a file
+-----------------------------------------------------------------------------*/
 x 'cd /projects/study123456/';
 filename fpath pipe "find . -name '*define*.xml' | head -1 | sed 's#.##'";
  

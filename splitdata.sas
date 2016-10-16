@@ -1,3 +1,8 @@
+/*-----------------------------------------------------------------------------
+ Author:          Xianhua Zeng
+ Creation Date:   25Jun2015
+ Program Purpose: To split dataset based on the value of a variable
+-----------------------------------------------------------------------------*/
 /*CALL EXECUTE*/
 proc sql;
 	create table sex as

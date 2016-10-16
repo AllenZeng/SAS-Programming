@@ -1,3 +1,8 @@
+/*-----------------------------------------------------------------------------
+ Author:          Xianhua Zeng
+ Creation Date:   25Jun2015
+ Program Purpose: To get the latest filename in a directory
+-----------------------------------------------------------------------------*/
 %macro getfname(keyword=, type=);
 filename fname pipe "ls -t ./*.&type | grep -i '&keyword' | head -1";
  

@@ -1,3 +1,8 @@
+/*-----------------------------------------------------------------------------
+ Author:          Xianhua Zeng
+ Creation Date:   25Jun2015
+ Program Purpose: To get last modified date of file in a directory
+-----------------------------------------------------------------------------*/
 filename fdate pipe "ls -t ./*.sas7bdat | head -1";
  
 data _null_;
