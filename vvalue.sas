@@ -4,12 +4,16 @@
  Program Purpose: To automagically copy variable value
 -----------------------------------------------------------------------------*/
 %macro vvalue();
-store;
-gsubmit "%nrstr(%%let) var=%nrstr(%%nrstr%()";
-gsubmit buf=default;
-gsubmit ");";
-
 gsubmit '
+dm "wcopy";
+filename clip clipbrd;
+data _null_;
+   infile clip;
+   input;
+   call symputx("var", _INFILE_);
+run;
+filename clip clear;
+
 proc sql noprint;
     select distinct &var into :varlst separated by "@"
     from &syslast
@@ -22,7 +26,7 @@ filename clip clipbrd;
 
 data _null_;
     file clip;
-    length value $200;
+    length value $32767;
 	if &increment <= countw("&varlst", "@") then value=scan("&varlst", &increment, "@");
 	else value=scan("&varlst", countw("&varlst", "@"), "@");
     put value;

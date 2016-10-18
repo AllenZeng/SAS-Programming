@@ -4,10 +4,13 @@
  Program Purpose: To automagically open the dataset selected 
 -----------------------------------------------------------------------------*/
 %macro markdsn();
-store;
-gsubmit "%nrstr(%%let) clip_d=%nrstr(%%nrstr%()";
-gsubmit buf=default;
-gsubmit ");";
-
-gsubmit 'dm "vt &clip_d;" continue;';
+gsubmit "
+dm 'wcopy';
+filename clip clipbrd;
+data _null_;
+   infile clip;
+   input;
+   call execute('dm ""vt '||_INFILE_||';"" continue ;');
+run;
+filename clip clear;";
 %mend markdsn;

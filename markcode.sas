@@ -4,11 +4,14 @@
  Program Purpose: To run the selected code and automagically open the last created dataset 
 -----------------------------------------------------------------------------*/
 %macro markcode();
-store;
-gsubmit "%nrstr(%%let) clip_c=%nrstr(%%nrstr%()";
-gsubmit buf=default;
-gsubmit ");";
-
-gsubmit "&clip_c";
-gsubmit 'dm "vt &syslast;" continue;';
+gsubmit "
+dm 'wcopy';
+filename clip clipbrd;
+data _null_;
+   infile clip end=eof;
+   input;
+   put _INFILE_;
+   if eof then call execute('dm ""vt &syslast;"" continue ;');
+run;
+filename clip clear;";
 %mend markcode;
