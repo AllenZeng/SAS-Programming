@@ -10,7 +10,7 @@ filename clip clipbrd;
 data _null_;
    infile clip end=eof;
    input;
-   put _INFILE_;
+   call execute(_INFILE_);
    if eof then call execute('dm ""vt &syslast;"" continue ;');
 run;
 filename clip clear;";
