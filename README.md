@@ -11,3 +11,5 @@
 <li>markcode.sas: Run the selected code and automagically open the last created dataset</li>
 <li>markdsn.sas: Automagically open the dataset selected</li>
 <li>vvalue.sas: Automagically copy variable value</li>
+<li>addvar.sas: Add Variables to SDTM Standard Domains</li>
+<li>chkdefcrfpage.sas: Do the CRF page number consistency check between define.xml and blank aCRF</li>

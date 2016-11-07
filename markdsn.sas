@@ -6,11 +6,14 @@
 %macro markdsn();
 gsubmit "
 dm 'wcopy';
+
 filename clip clipbrd;
+
 data _null_;
-   infile clip;
-   input;
-   call execute('dm ""vt '||_INFILE_||';"" continue ;');
+    infile clip;
+    input;
+    call execute('dm ""vt '||_INFILE_||';"" continue ;');
 run;
+
 filename clip clear;";
 %mend markdsn;

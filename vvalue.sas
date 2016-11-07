@@ -6,12 +6,15 @@
 %macro vvalue();
 gsubmit '
 dm "wcopy";
+
 filename clip clipbrd;
+
 data _null_;
-   infile clip;
-   input;
-   call symputx("var", _INFILE_);
+    infile clip;
+    input;
+    call symputx("var", _INFILE_);
 run;
+
 filename clip clear;
 
 proc sql noprint;
@@ -27,8 +30,8 @@ filename clip clipbrd;
 data _null_;
     file clip;
     length value $32767;
-	if &increment <= countw("&varlst", "@") then value=scan("&varlst", &increment, "@");
-	else value=scan("&varlst", countw("&varlst", "@"), "@");
+    if &increment <= countw("&varlst", "@") then value=scan("&varlst", &increment, "@");
+    else value=scan("&varlst", countw("&varlst", "@"), "@");
     put value;
 run;
 
