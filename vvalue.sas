@@ -23,7 +23,10 @@ proc sql noprint;
     ;
 quit;
 
-%let increment=%eval(&increment+1);
+data _null_;
+    if ^symexist("increment") then call symputx("increment", 1, "g");
+    else call symputx("increment", 1 + input(symget("increment"), best.), "g"); 
+run;
 
 filename clip clipbrd;
 
