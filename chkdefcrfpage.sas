@@ -84,7 +84,9 @@ quit;
 /* Extract variable name from &varlist*/
 data comments03;
     set comments02;
-    COMMENTS=cats(compbl(prxchange("s/.*?(\b(?:&varlist)\b)?/\1 /o", -1, cats(COMMENTS))));
+    retain REX;
+    if _N_=1 then REX=prxparse("s/.*?(\b(?:&varlist)\b)?/\1 /");
+    COMMENTS=cats(compbl(prxchange(REX, -1, cats(COMMENTS))));
     if not missing(COMMENTS);
 run;
 
